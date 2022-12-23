@@ -1,0 +1,56 @@
+//ooplab9 q1
+#include<iostream>
+using namespace std;
+class shape
+{
+        public:
+	virtual void area()=0;  
+};
+class circle: public shape
+{
+   float r; 
+   public:
+    void area()
+   {
+       cout<<"\nEnter radius : ";
+       cin>>r;
+       cout<<"\nArea of circle : "<<(2.146*r*r);
+   }
+};
+class square: public shape
+{
+	int l; 
+	public:
+   void area()
+   {
+       cout<<"\nEnter length : ";
+       cin>>l;
+       cout<<"\nArea of square : "<<l*l;
+   }
+};
+class triangle: public shape
+{
+
+	int h,b;
+       float a;
+	public:
+       void area()
+       {
+   	    cout<<"\nEnter height : ";
+            cin>>h;
+            cout<<"\nEnter breadth : ";
+            cin>>b;
+            a=0.5*h*b;
+            cout<<"\nArea of triangle : "<<a;
+       }
+};
+int main()
+{
+   circle c; 
+   c.area();
+   square r; 
+   r.area();
+   triangle t; 
+   t.area();
+   return(0);
+}
