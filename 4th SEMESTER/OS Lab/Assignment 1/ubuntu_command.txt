@@ -1,0 +1,92 @@
+COMMANDS                FUNCTION                                                                         EXAMPLE
+
+pwd                     present working method                                                           pwd- /home/kiit
+
+clear                   clear the terminal                                                               pwd- /home/kiit - blank page
+
+cal                     display the calender of this month today                                         january 2023 calender
+
+cal-3                   display the calender of last current and next month                              december january february 2023 calender\
+
+cal 2023                display current year calender                                                    year 2023 calender
+
+date                    system date and time                                                             Mon Jan 23 21:44:32 IST 2023
+
+date +%D                date of today in format MM/DD/YYYY                                               23/01/2023
+
+date +%e                only date of today DD                                                            23
+
+date +%c                day date month year time                                                         Mon Jan 23 21:52:45 2023
+
+date +%d                date only format DD                                                              23
+ 
+date +%B                total name of this month                                                         january
+
+date +%b                short name of this month                                                         jan
+
+ls                      list of file and folder                                                          Demo.txt   Demo2.txt  Documents  Hello  OS       
+                                                                                                         Public     Videos  demo.txt   demo2.txt  thinclient_drives
+                                                                                                         Demo1.txt  Desktop
+                                                                                                         Downloads  Music  Pictures  Templates  a.c
+                                                                                                         demo1.txt  os.text
+
+ls -l                   long list format list of files                                                   total 52
+                                                                                                         -rw-r--r-- 1 kiit kiit    0 Jan 17 12:51 Demo.txt
+                                                
+cat >hello.txt         create a file of name hello.txt                                                   nayeer
+
+cat hello.txt          display the file of hello.txt                                                     nayeer
+
+cat >>hello.txt        modify the file hello.txt                                                         nayeer (enter) nayeer786 
+
+cat hello.txt hi.txt   merge the two file                                                                nayeer (enter) nayeer786 (enter) praneesh 	
+
+cat hello.txt hi.txt   merge and save another file                                                       nayeer (enter) nayeer786 (enter) praneesh (enter) praneesh 
+             >hey.txt
+
+rm text file           delete txt file                                                                   nayeer (enter) nayeer786 (enter) praneesh
+
+cat hey.txt            display hey.txt                                                                   nayeer (enter) nayeer786 (enter) praneesh
+
+mkdir nn               make directory                                                                    nn
+
+cd nn                  change directory                                                                  ~/nn$
+
+cd ..                  step bakward                                                                      ~$
+
+cd /                   root directory                                                                    /$
+
+cd ~                   home directory                                                                    ~$
+
+rmdir nn               remove directory                                                                  removed nn
+
+cp hello.txt 
+welcome.txt            copy from hello.txt and paste to welcome.txt                                      content is copied from hello to welcome
+
+mv hello.txt h1.txt    move or rename a file                                                             now the name of hello.txt is changed to h1.txt  
+
+touch f1, f2, f3       creating 3 file at once                                                           3 files are created at once (it will be first modified by cat >> f1 the it will be displayed by cat  f1) 
+
+mkdir d1,d2,d3         creating 3 directories                                                            d1 d2 and d3 three blank directory created 
+
+tac hello.txt          reverse hello.txt                                                                 it recovers hello.txt file
+
+sort hello.txt         sorting file                                                                      file will be sorted
+
+sort -r hello.txt      sorting file in revrse order                                                      file will be sorted in reverse order
+
+head hello.txt         display line from the top                                                         line is displayed from top
+
+head -2 hello.txt      display first 2 line from top                                                     first 2 line is displyed 
+
+tail hello.txt         display last 2 line from bottom                                                   line is displayed from bottom
+ 
+tail -2 hello.txt      display first 2 line from top                                                     last 2 line is displyed 
+
+wc hello.txt           no of line, no of word, no of byte                                                15 15 108 hello.txt
+
+echo a=5               work like printf                                                                  a=5
+
+read a                 work like scanf                                                                   5
+  
+                                                 
