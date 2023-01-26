@@ -1,0 +1,558 @@
+SQL> create table Assignment1(EMPNO number,
+  2  ENAME varchar(20),
+  3  JOB varchar(20),
+  4  MGR number,
+  5  HIREDATE number,
+  6  SAL number,
+  7  COMM number,
+  8  DEPTNO number);
+
+Table created.
+
+SQL> select * from Assignment1;
+
+no rows selected
+
+SQL> DESC Assignment1
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPNO                                              NUMBER
+ ENAME                                              VARCHAR2(20)
+ JOB                                                VARCHAR2(20)
+ MGR                                                NUMBER
+ HIREDATE                                           NUMBER
+ SAL                                                NUMBER
+ COMM                                               NUMBER
+ DEPTNO                                             NUMBER
+
+SQL> insert into Assignment1(EMPNO , ENAME , JOB , MGR , HIREDATE , SAL , COMM , DEPT)
+  2  values(7369 , 'SMITH' , 'CLERK' , 7902 , 17-DEC-80 , 800 , NULL , 20);
+values(7369 , 'SMITH' , 'CLERK' , 7902 , 17-DEC-80 , 800 , NULL , 20)
+                                            *
+ERROR at line 2:
+ORA-00984: column not allowed here 
+
+
+SQL> insert into Assignment1(EMPNO , ENAME , JOB , MGR , HIREDATE , SAL , COMM , DEPT)
+  2  values(7369 , 'SMITH' , 'CLERK' , 7902 , '17-DEC-80' , 800 , NULL , 20);
+insert into Assignment1(EMPNO , ENAME , JOB , MGR , HIREDATE , SAL , COMM , DEPT)
+                                                                            *
+ERROR at line 1:
+ORA-00904: "DEPT": invalid identifier 
+
+
+SQL> DROP Assignment1
+  2  ;
+DROP Assignment1
+     *
+ERROR at line 1:
+ORA-00950: invalid DROP option 
+
+
+SQL> DROP table Assignment1;
+
+Table dropped.
+
+SQL> create table Assignment1(EMPNO number,
+  2  ENAME varchar(20),
+  3  JOB varchar(20),
+  4  MGR number,
+  5  HIREDATE varchar(20),
+  6  SAL number,
+  7  COMM number,
+  8  DEPTNO number);
+
+Table created.
+
+SQL> DESC Assignment1
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPNO                                              NUMBER
+ ENAME                                              VARCHAR2(20)
+ JOB                                                VARCHAR2(20)
+ MGR                                                NUMBER
+ HIREDATE                                           VARCHAR2(20)
+ SAL                                                NUMBER
+ COMM                                               NUMBER
+ DEPTNO                                             NUMBER
+
+SQL> insert into Assignment1(EMPNO , ENAME , JOB , MGR , HIREDATE , SAL , COMM , DEPT)
+  2  values(7369 , 'SMITH' , 'CLERK' , 7902 , 17-DEC-80 , 800 , NULL , 20);
+values(7369 , 'SMITH' , 'CLERK' , 7902 , 17-DEC-80 , 800 , NULL , 20)
+                                            *
+ERROR at line 2:
+ORA-00984: column not allowed here 
+
+
+SQL> insert into Assignment1(EMPNO , ENAME , JOB , MGR , HIREDATE , SAL , COMM , DEPT)
+  2  values(7369 , 'SMITH' , 'CLERK' , 7902 , '17-DEC-80' , 800 , NULL , 20);
+insert into Assignment1(EMPNO , ENAME , JOB , MGR , HIREDATE , SAL , COMM , DEPT)
+                                                                            *
+ERROR at line 1:
+ORA-00904: "DEPT": invalid identifier 
+
+
+SQL> insert into Assignment1(EMPNO , ENAME , JOB , MGR , HIREDATE , SAL , COMM , DEPTNO)
+  2  values(7369 , 'SMITH' , 'CLERK' , 7902 , '17-DEC-80' , 800 , NULL , 20);
+
+1 row created.
+
+SQL> select * Assigment1;
+select * Assigment1
+         *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> select * from Assignment1;
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7369 SMITH                CLERK                      7902                 
+17-DEC-80                   800                    20                           
+                                                                                
+
+SQL> insert into Assignment1(EMPNO , ENAME , JOB , MGR , HIREDATE , SAL , COMM , DEPT)
+  2  values(7499 , 'ALLEN' , 'SALESMAN' , 7692 , '20-FEB-81' , 1600 , 300 , 30);
+insert into Assignment1(EMPNO , ENAME , JOB , MGR , HIREDATE , SAL , COMM , DEPT)
+                                                                            *
+ERROR at line 1:
+ORA-00904: "DEPT": invalid identifier 
+
+
+SQL> insert into Assignment1(EMPNO , ENAME , JOB , MGR , HIREDATE , SAL , COMM , DEPTNO)
+  2  values(7499 , 'ALLEN' , 'SALESMAN' , 7692 , '20-FEB-81' , 1600 , 300 , 30);
+
+1 row created.
+
+SQL> select * from Assignment1;
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7369 SMITH                CLERK                      7902                 
+17-DEC-80                   800                    20                           
+                                                                                
+      7499 ALLEN                SALESMAN                   7692                 
+20-FEB-81                  1600        300         30                           
+                                                                                
+
+SQL> insert into Assignment1(EMPNO , ENAME , JOB , MGR , HIREDATE , SAL , COMM , DEPTNO)
+  2  values(7521 , 'WARD' , 'SALESMAN' , 7698 , '22-FEB-81' , 1250 , 500 , 30);
+
+1 row created.
+
+SQL> insert into Assignment1(EMPNO , ENAME , JOB , MGR , HIREDATE , SAL , COMM , DEPTNO)
+  2  values(7566 , 'JONES' , 'MANAGER' , 7839 , '02-APR-81' , 2975 , NULL , 20);
+
+1 row created.
+
+SQL> insert into Assignment1(EMPNO , ENAME , JOB , MGR , HIREDATE , SAL , COMM , DEPTNO)
+  2  values(7654 , 'MARTIN' , 'SALESMAN' , 7698 , '28-SEP-81' , 1250 , 1400 , 30);
+
+1 row created.
+
+SQL> insert into Assignment1(EMPNO , ENAME , JOB , MGR , HIREDATE , SAL , COMM , DEPTNO)
+  2  values(7698 , 'BLAKE' , 'MANAGER' , 7839 , '01-MAY-81' , 2850 , NULL , 30);
+
+1 row created.
+
+SQL> insert into Assignment1(EMPNO , ENAME , JOB , MGR , HIREDATE , SAL , COMM , DEPTNO)
+  2  values(7782 , 'CLARK' , 'MANAGER' , 7839 , '09-JUN-81' , 2450 , NULL , 10);
+
+1 row created.
+
+SQL> insert into Assignment1(EMPNO , ENAME , JOB , MGR , HIREDATE , SAL , COMM , DEPTNO)
+  2  values(7788 , 'SCOTT' , 'ANALYST' , 7566 , '09-NOV-81' , 3000 , NULL , 20);
+
+1 row created.
+
+SQL> insert into Assignment1(EMPNO , ENAME , JOB , MGR , HIREDATE , SAL , COMM , DEPTNO)
+  2  values(7839 , 'KING' , 'PRESIDENT' , NULL , '17-NOV-81' , 5000 , NULL , 10);
+
+1 row created.
+
+SQL> SELECT * FROM Assignment1;
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7369 SMITH                CLERK                      7902                 
+17-DEC-80                   800                    20                           
+                                                                                
+      7499 ALLEN                SALESMAN                   7692                 
+20-FEB-81                  1600        300         30                           
+                                                                                
+      7521 WARD                 SALESMAN                   7698                 
+22-FEB-81                  1250        500         30                           
+                                                                                
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7566 JONES                MANAGER                    7839                 
+02-APR-81                  2975                    20                           
+                                                                                
+      7654 MARTIN               SALESMAN                   7698                 
+28-SEP-81                  1250       1400         30                           
+                                                                                
+      7698 BLAKE                MANAGER                    7839                 
+01-MAY-81                  2850                    30                           
+                                                                                
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7782 CLARK                MANAGER                    7839                 
+09-JUN-81                  2450                    10                           
+                                                                                
+      7788 SCOTT                ANALYST                    7566                 
+09-NOV-81                  3000                    20                           
+                                                                                
+      7839 KING                 PRESIDENT                                       
+17-NOV-81                  5000                    10                           
+                                                                                
+
+9 rows selected.
+
+SQL> insert into Assignment1(EMPNO , ENAME , JOB , MGR , HIREDATE , SAL , COMM , DEPTNO)
+  2  values(7844 , 'TURNER' , 'SALESMAN' , 7698 , '08-SEP-81' , 1500 , 0 , 30);
+
+1 row created.
+
+SQL> insert into Assignment1(EMPNO , ENAME , JOB , MGR , HIREDATE , SAL , COMM , DEPTNO)
+  2  values(7876 , 'ADAMS' , 'CLERK' , 7788 , '23-SEP-81' , 1100 , NULL , 20);
+
+1 row created.
+
+SQL> insert into Assignment1(EMPNO , ENAME , JOB , MGR , HIREDATE , SAL , COMM , DEPTNO)
+  2  values(7900 , 'JAMES' , 'CLERK' , 7698 , '03-DEC-81' , 950 , NULL , 30);
+
+1 row created.
+
+SQL> insert into Assignment1(EMPNO , ENAME , JOB , MGR , HIREDATE , SAL , COMM , DEPTNO)
+  2  values(7902 , 'FORD' , 'ANALYST' , 7566 , '03-DEC-81' , 3000 , NULL , 20);
+
+1 row created.
+
+SQL> insert into Assignment1(EMPNO , ENAME , JOB , MGR , HIREDATE , SAL , COMM , DEPTNO)
+  2  values(7934 , 'MILLER' , 'CLERK' , 7782 , '23-JAN-82' , 1300 , NULL , 10);
+
+1 row created.
+
+SQL> SELECT * FROM Assignment1;
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7369 SMITH                CLERK                      7902                 
+17-DEC-80                   800                    20                           
+                                                                                
+      7499 ALLEN                SALESMAN                   7692                 
+20-FEB-81                  1600        300         30                           
+                                                                                
+      7521 WARD                 SALESMAN                   7698                 
+22-FEB-81                  1250        500         30                           
+                                                                                
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7566 JONES                MANAGER                    7839                 
+02-APR-81                  2975                    20                           
+                                                                                
+      7654 MARTIN               SALESMAN                   7698                 
+28-SEP-81                  1250       1400         30                           
+                                                                                
+      7698 BLAKE                MANAGER                    7839                 
+01-MAY-81                  2850                    30                           
+                                                                                
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7782 CLARK                MANAGER                    7839                 
+09-JUN-81                  2450                    10                           
+                                                                                
+      7788 SCOTT                ANALYST                    7566                 
+09-NOV-81                  3000                    20                           
+                                                                                
+      7839 KING                 PRESIDENT                                       
+17-NOV-81                  5000                    10                           
+                                                                                
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7844 TURNER               SALESMAN                   7698                 
+08-SEP-81                  1500          0         30                           
+                                                                                
+      7876 ADAMS                CLERK                      7788                 
+23-SEP-81                  1100                    20                           
+                                                                                
+      7900 JAMES                CLERK                      7698                 
+03-DEC-81                   950                    30                           
+                                                                                
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7902 FORD                 ANALYST                    7566                 
+03-DEC-81                  3000                    20                           
+                                                                                
+      7934 MILLER               CLERK                      7782                 
+23-JAN-82                  1300                    10                           
+                                                                                
+
+14 rows selected.
+
+SQL> commit
+  2  ;
+
+Commit complete.
+
+SQL> show databases;
+SP2-0158: unknown SHOW option "databases"
+SQL> Select * from databases;
+Select * from databases
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> SELECT * FROM Assignment1;
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7369 SMITH                CLERK                      7902                 
+17-DEC-80                   800                    20                           
+                                                                                
+      7499 ALLEN                SALESMAN                   7692                 
+20-FEB-81                  1600        300         30                           
+                                                                                
+      7521 WARD                 SALESMAN                   7698                 
+22-FEB-81                  1250        500         30                           
+                                                                                
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7566 JONES                MANAGER                    7839                 
+02-APR-81                  2975                    20                           
+                                                                                
+      7654 MARTIN               SALESMAN                   7698                 
+28-SEP-81                  1250       1400         30                           
+                                                                                
+      7698 BLAKE                MANAGER                    7839                 
+01-MAY-81                  2850                    30                           
+                                                                                
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7782 CLARK                MANAGER                    7839                 
+09-JUN-81                  2450                    10                           
+                                                                                
+      7788 SCOTT                ANALYST                    7566                 
+09-NOV-81                  3000                    20                           
+                                                                                
+      7839 KING                 PRESIDENT                                       
+17-NOV-81                  5000                    10                           
+                                                                                
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7844 TURNER               SALESMAN                   7698                 
+08-SEP-81                  1500          0         30                           
+                                                                                
+      7876 ADAMS                CLERK                      7788                 
+23-SEP-81                  1100                    20                           
+                                                                                
+      7900 JAMES                CLERK                      7698                 
+03-DEC-81                   950                    30                           
+                                                                                
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7902 FORD                 ANALYST                    7566                 
+03-DEC-81                  3000                    20                           
+                                                                                
+      7934 MILLER               CLERK                      7782                 
+23-JAN-82                  1300                    10                           
+                                                                                
+
+14 rows selected.
+
+SQL> SELECT * FROM Assignment1;
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7369 SMITH                CLERK                      7902                 
+17-DEC-80                   800                    20                           
+                                                                                
+      7499 ALLEN                SALESMAN                   7692                 
+20-FEB-81                  1600        300         30                           
+                                                                                
+      7521 WARD                 SALESMAN                   7698                 
+22-FEB-81                  1250        500         30                           
+                                                                                
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7566 JONES                MANAGER                    7839                 
+02-APR-81                  2975                    20                           
+                                                                                
+      7654 MARTIN               SALESMAN                   7698                 
+28-SEP-81                  1250       1400         30                           
+                                                                                
+      7698 BLAKE                MANAGER                    7839                 
+01-MAY-81                  2850                    30                           
+                                                                                
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7782 CLARK                MANAGER                    7839                 
+09-JUN-81                  2450                    10                           
+                                                                                
+      7788 SCOTT                ANALYST                    7566                 
+09-NOV-81                  3000                    20                           
+                                                                                
+      7839 KING                 PRESIDENT                                       
+17-NOV-81                  5000                    10                           
+                                                                                
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7844 TURNER               SALESMAN                   7698                 
+08-SEP-81                  1500          0         30                           
+                                                                                
+      7876 ADAMS                CLERK                      7788                 
+23-SEP-81                  1100                    20                           
+                                                                                
+      7900 JAMES                CLERK                      7698                 
+03-DEC-81                   950                    30                           
+                                                                                
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7902 FORD                 ANALYST                    7566                 
+03-DEC-81                  3000                    20                           
+                                                                                
+      7934 MILLER               CLERK                      7782                 
+23-JAN-82                  1300                    10                           
+                                                                                
+
+14 rows selected.
+
+SQL> SHOW FULL TABLES;
+SP2-0158: unknown SHOW option "FULL"
+SP2-0158: unknown SHOW option "TABLES"
+SQL> SELECT * FROM Assignment1;
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7369 SMITH                CLERK                      7902                 
+17-DEC-80                   800                    20                           
+                                                                                
+      7499 ALLEN                SALESMAN                   7692                 
+20-FEB-81                  1600        300         30                           
+                                                                                
+      7521 WARD                 SALESMAN                   7698                 
+22-FEB-81                  1250        500         30                           
+                                                                                
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7566 JONES                MANAGER                    7839                 
+02-APR-81                  2975                    20                           
+                                                                                
+      7654 MARTIN               SALESMAN                   7698                 
+28-SEP-81                  1250       1400         30                           
+                                                                                
+      7698 BLAKE                MANAGER                    7839                 
+01-MAY-81                  2850                    30                           
+                                                                                
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7782 CLARK                MANAGER                    7839                 
+09-JUN-81                  2450                    10                           
+                                                                                
+      7788 SCOTT                ANALYST                    7566                 
+09-NOV-81                  3000                    20                           
+                                                                                
+      7839 KING                 PRESIDENT                                       
+17-NOV-81                  5000                    10                           
+                                                                                
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7844 TURNER               SALESMAN                   7698                 
+08-SEP-81                  1500          0         30                           
+                                                                                
+      7876 ADAMS                CLERK                      7788                 
+23-SEP-81                  1100                    20                           
+                                                                                
+      7900 JAMES                CLERK                      7698                 
+03-DEC-81                   950                    30                           
+                                                                                
+
+     EMPNO ENAME                JOB                         MGR                 
+---------- -------------------- -------------------- ----------                 
+HIREDATE                    SAL       COMM     DEPTNO                           
+-------------------- ---------- ---------- ----------                           
+      7902 FORD                 ANALYST                    7566                 
+03-DEC-81                  3000                    20                           
+                                                                                
+      7934 MILLER               CLERK                      7782                 
+23-JAN-82                  1300                    10                           
+                                                                                
+
+14 rows selected.
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> spool off;
