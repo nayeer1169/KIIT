@@ -1,0 +1,238 @@
+SQL> create table employee
+  2  '
+  3  ;
+'
+*
+ERROR at line 2:
+ORA-01756: quoted string not properly terminated 
+
+
+SQL> create table employee;
+create table employee
+                    *
+ERROR at line 1:
+ORA-00906: missing left parenthesis 
+
+
+SQL> SHOW
+SQL> 
+SQL> SHOW table
+SP2-0158: unknown SHOW option "table"
+SQL> SHOW employee1
+SP2-0158: unknown SHOW option "employee1"
+SQL> SHOW table employee1
+SP2-0158: unknown SHOW option "table"
+SP2-0158: unknown SHOW option "employee1"
+SQL> SHOW tables
+SP2-0158: unknown SHOW option "tables"
+SQL> 
+SQL> SHOW TABLES
+SP2-0158: unknown SHOW option "TABLES"
+SQL> create table employee1(EMPID number(10) ,
+  2  NAME varchar2(20),
+  3  ADDRESS varchar2(20),
+  4  CITY varchar2(10), DOJ date , GENDER char , SALARY number(10,2);
+CITY varchar2(10), DOJ date , GENDER char , SALARY number(10,2)
+                                                              *
+ERROR at line 4:
+ORA-00907: missing right parenthesis 
+
+
+SQL> create table employee1(EMPID number(10) ,
+  2  NAME varchar2(20),
+  3  ADDRESS varchar2(20),
+  4  CITY varchar2(10), DOJ date , GENDER char , SALARY number(10,2));
+create table employee1(EMPID number(10) ,
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+SQL> SELECT * FROM employee1
+  2  ;
+
+     EMPID NAME                 ADDRESS              CITY                 DOJ       G     SALARY      BONUS      PHONE                                                                                  
+---------- -------------------- -------------------- -------------------- --------- - ---------- ---------- ----------                                                                                  
+      1111 PREENON              MANITOLA             MALDA                14-FEB-11 M       5000       3000  987612345                                                                                  
+      1122 SHRAVAN              HATIA                KOLKATA              17-FEB-11 M       6000       1000 9876543213                                                                                  
+      1133 NAYEER               DORANDA              RANCHI               21-FEB-11 M       4000       1300 9876543213                                                                                  
+      1144 PRANEESH             POWAI                MUMBAI               27-FEB-11 M      11000       3100 9876543213                                                                                  
+      1155 ANNA                 KEMPAGONDA           CHENNAI              17-MAR-11 M       1000       3500 9876543213                                                                                  
+      1166 SHASHANK             HCL                  NAGPUR               21-MAR-11 M       7000       4040 9877653213                                                                                  
+      1177 ZOITA                DEBI                 ALLAHABAD            28-MAR-11 M       3000       4500 9877653213                                                                                  
+      1188 GUJJU                BOIDA                AHEMDABAD            02-APR-11 M       6000        550  987612345                                                                                  
+      1199 ROY                  PARK STREET          KOLKATA              12-APR-11 M       9000       1230  987612345                                                                                  
+      1211 ZIZA                 HAIMA                GUWAHATI             21-APR-11 M       6500       1350  456712345                                                                                  
+                                                                                                       1000                                                                                             
+
+11 rows selected.
+
+SQL> select salary more than 5000 ;
+select salary more than 5000 
+                   *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> select salary > 5000;
+select salary > 5000
+              *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> select * from employee1 where salary>5000;
+
+     EMPID NAME                 ADDRESS              CITY                 DOJ       G     SALARY      BONUS      PHONE                                                                                  
+---------- -------------------- -------------------- -------------------- --------- - ---------- ---------- ----------                                                                                  
+      1122 SHRAVAN              HATIA                KOLKATA              17-FEB-11 M       6000       1000 9876543213                                                                                  
+      1144 PRANEESH             POWAI                MUMBAI               27-FEB-11 M      11000       3100 9876543213                                                                                  
+      1166 SHASHANK             HCL                  NAGPUR               21-MAR-11 M       7000       4040 9877653213                                                                                  
+      1188 GUJJU                BOIDA                AHEMDABAD            02-APR-11 M       6000        550  987612345                                                                                  
+      1199 ROY                  PARK STREET          KOLKATA              12-APR-11 M       9000       1230  987612345                                                                                  
+      1211 ZIZA                 HAIMA                GUWAHATI             21-APR-11 M       6500       1350  456712345                                                                                  
+
+6 rows selected.
+
+SQL> select * from employee1 where salary is > 5000 < 10000;
+select * from employee1 where salary is > 5000 < 10000
+                                        *
+ERROR at line 1:
+ORA-00908: missing NULL keyword 
+
+
+SQL> select * from employee1 where salary>5000<10000;
+select * from employee1 where salary>5000<10000
+                                         *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended 
+
+
+SQL> select * from employee1 where salary between 5000 and 10000;
+
+     EMPID NAME                 ADDRESS              CITY                 DOJ       G     SALARY      BONUS      PHONE                                                                                  
+---------- -------------------- -------------------- -------------------- --------- - ---------- ---------- ----------                                                                                  
+      1111 PREENON              MANITOLA             MALDA                14-FEB-11 M       5000       3000  987612345                                                                                  
+      1122 SHRAVAN              HATIA                KOLKATA              17-FEB-11 M       6000       1000 9876543213                                                                                  
+      1166 SHASHANK             HCL                  NAGPUR               21-MAR-11 M       7000       4040 9877653213                                                                                  
+      1188 GUJJU                BOIDA                AHEMDABAD            02-APR-11 M       6000        550  987612345                                                                                  
+      1199 ROY                  PARK STREET          KOLKATA              12-APR-11 M       9000       1230  987612345                                                                                  
+      1211 ZIZA                 HAIMA                GUWAHATI             21-APR-11 M       6500       1350  456712345                                                                                  
+
+6 rows selected.
+
+SQL> select * from employee1 where city=kolkata;
+select * from employee1 where city=kolkata
+                                   *
+ERROR at line 1:
+ORA-00904: "KOLKATA": invalid identifier 
+
+
+SQL> select * from employee1 who lives in kolkata;
+select * from employee1 who lives in kolkata
+                            *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended 
+
+
+SQL> select * from employee1 where=KOLKATA;
+select * from employee1 where=KOLKATA
+                             *
+ERROR at line 1:
+ORA-00936: missing expression 
+
+
+SQL> select * from employee1 where city=KOLKATA;
+select * from employee1 where city=KOLKATA
+                                   *
+ERROR at line 1:
+ORA-00904: "KOLKATA": invalid identifier 
+
+
+SQL> select * from employee1 where city=KOLKATA;
+select * from employee1 where city=KOLKATA
+                                   *
+ERROR at line 1:
+ORA-00904: "KOLKATA": invalid identifier 
+
+
+SQL> select * from employee1 where city='KOLKATA';
+
+     EMPID NAME                 ADDRESS              CITY                 DOJ       G     SALARY      BONUS      PHONE                                                                                  
+---------- -------------------- -------------------- -------------------- --------- - ---------- ---------- ----------                                                                                  
+      1122 SHRAVAN              HATIA                KOLKATA              17-FEB-11 M       6000       1000 9876543213                                                                                  
+      1199 ROY                  PARK STREET          KOLKATA              12-APR-11 M       9000       1230  987612345                                                                                  
+
+SQL> select * from employee1 where city='NULL';
+
+no rows selected
+
+SQL> alter table employee
+  2  
+SQL> alter table employee1
+  2  add pip  number(10);
+
+Table altered.
+
+SQL> select * from employee1;
+
+     EMPID NAME                 ADDRESS              CITY                 DOJ       G     SALARY      BONUS      PHONE        PIP                                                                       
+---------- -------------------- -------------------- -------------------- --------- - ---------- ---------- ---------- ----------                                                                       
+      1111 PREENON              MANITOLA             MALDA                14-FEB-11 M       5000       3000  987612345                                                                                  
+      1122 SHRAVAN              HATIA                KOLKATA              17-FEB-11 M       6000       1000 9876543213                                                                                  
+      1133 NAYEER               DORANDA              RANCHI               21-FEB-11 M       4000       1300 9876543213                                                                                  
+      1144 PRANEESH             POWAI                MUMBAI               27-FEB-11 M      11000       3100 9876543213                                                                                  
+      1155 ANNA                 KEMPAGONDA           CHENNAI              17-MAR-11 M       1000       3500 9876543213                                                                                  
+      1166 SHASHANK             HCL                  NAGPUR               21-MAR-11 M       7000       4040 9877653213                                                                                  
+      1177 ZOITA                DEBI                 ALLAHABAD            28-MAR-11 M       3000       4500 9877653213                                                                                  
+      1188 GUJJU                BOIDA                AHEMDABAD            02-APR-11 M       6000        550  987612345                                                                                  
+      1199 ROY                  PARK STREET          KOLKATA              12-APR-11 M       9000       1230  987612345                                                                                  
+      1211 ZIZA                 HAIMA                GUWAHATI             21-APR-11 M       6500       1350  456712345                                                                                  
+                                                                                                       1000                                                                                             
+
+11 rows selected.
+
+SQL> 
+SQL> alter table employee1
+  2  drop pip;
+drop pip
+     *
+ERROR at line 2:
+ORA-00905: missing keyword 
+
+
+SQL> alter table employee1
+  2  remove pip;
+remove pip
+*
+ERROR at line 2:
+ORA-01735: invalid ALTER TABLE option 
+
+
+SQL> alter table employee1
+  2  drop pip number(10);
+drop pip number(10)
+     *
+ERROR at line 2:
+ORA-00905: missing keyword 
+
+
+SQL> alter table employee1
+  2  drop column pip number(10);
+drop column pip number(10)
+                *
+ERROR at line 2:
+ORA-00933: SQL command not properly ended 
+
+
+SQL> alter table employee1
+  2  drop column pip;
+
+Table altered.
+
+SQL> 
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off;

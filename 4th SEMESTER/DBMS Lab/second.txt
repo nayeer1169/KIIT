@@ -1,0 +1,121 @@
+SQL> alter table employee1;
+alter table employee1
+                    *
+ERROR at line 1:
+ORA-02210: no options specified for ALTER TABLE 
+
+
+SQL> alter table employee1
+  2  drop coloumn phone;
+drop coloumn phone
+     *
+ERROR at line 2:
+ORA-00905: missing keyword 
+
+
+SQL> alter table employee1
+  2  drop column phone;
+
+Table altered.
+
+SQL> alter table employee1
+  2  add PHONE NO. number(10);
+add PHONE NO. number(10)
+              *
+ERROR at line 2:
+ORA-00905: missing keyword 
+
+
+SQL> alter table employee1
+  2  add PHONE number(10);
+
+Table altered.
+
+SQL> update employee1 set phone = 9876543213 where empid = 1122;
+
+1 row updated.
+
+SQL> update employee1 set phone = 9876543213 where empid = 1133;
+
+1 row updated.
+
+SQL> update employee1 set phone = 9876543213 where empid = 1144;
+
+1 row updated.
+
+SQL> update employee1 set phone = 9876543213 where empid = 1155;
+
+1 row updated.
+
+SQL> update employee1 set phone = 9877653213 where empid = 1166;
+
+1 row updated.
+
+SQL> select * from employee1;
+
+     EMPID NAME                 ADDRESS              CITY                 DOJ       G     SALARY      BONUS      PHONE                                                                                  
+---------- -------------------- -------------------- -------------------- --------- - ---------- ---------- ----------                                                                                  
+      1111 PREENON              MANITOLA             MALDA                14-FEB-11 M       5000       3000                                                                                             
+      1122 SHRAVAN              HATIA                KOLKATA              17-FEB-11 M       6000       1000 9876543213                                                                                  
+      1133 NAYEER               DORANDA              RANCHI               21-FEB-11 M       4000       1300 9876543213                                                                                  
+      1144 PRANEESH             POWAI                MUMBAI               27-FEB-11 M      11000       3100 9876543213                                                                                  
+      1155 ANNA                 KEMPAGONDA           CHENNAI              17-MAR-11 M       1000       3500 9876543213                                                                                  
+      1166 SHASHANK             HCL                  NAGPUR               21-MAR-11 M       7000       4040 9877653213                                                                                  
+      1177 ZOITA                DEBI                 ALLAHABAD            28-MAR-11 M       3000       4500                                                                                             
+      1188 GUJJU                BOIDA                AHEMDABAD            02-APR-11 M       6000        550                                                                                             
+      1199 ROY                  PARK STREET          KOLKATA              12-APR-11 M       9000       1230                                                                                             
+      1211 ZIZA                 HAIMA                GUWAHATI             21-APR-11 M       6500       1350                                                                                             
+                                                                                                       1000                                                                                             
+
+11 rows selected.
+
+SQL> update employee1 set phone = 9877653213 where empid = 1177;
+
+1 row updated.
+
+SQL> update employee1 set phone = 987612345 where empid = 1111;
+
+1 row updated.
+
+SQL> update employee1 set phone = 987612345 where empid = 1188;
+
+1 row updated.
+
+SQL> update employee1 set phone = 987612345 where empid = 1199;
+
+1 row updated.
+
+SQL> update employee1 set phone = 456712345 where empid = 1211;
+
+1 row updated.
+
+SQL> select * employee1;
+select * employee1
+         *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> select * from employee1;
+
+     EMPID NAME                 ADDRESS              CITY                 DOJ       G     SALARY      BONUS      PHONE                                                                                  
+---------- -------------------- -------------------- -------------------- --------- - ---------- ---------- ----------                                                                                  
+      1111 PREENON              MANITOLA             MALDA                14-FEB-11 M       5000       3000  987612345                                                                                  
+      1122 SHRAVAN              HATIA                KOLKATA              17-FEB-11 M       6000       1000 9876543213                                                                                  
+      1133 NAYEER               DORANDA              RANCHI               21-FEB-11 M       4000       1300 9876543213                                                                                  
+      1144 PRANEESH             POWAI                MUMBAI               27-FEB-11 M      11000       3100 9876543213                                                                                  
+      1155 ANNA                 KEMPAGONDA           CHENNAI              17-MAR-11 M       1000       3500 9876543213                                                                                  
+      1166 SHASHANK             HCL                  NAGPUR               21-MAR-11 M       7000       4040 9877653213                                                                                  
+      1177 ZOITA                DEBI                 ALLAHABAD            28-MAR-11 M       3000       4500 9877653213                                                                                  
+      1188 GUJJU                BOIDA                AHEMDABAD            02-APR-11 M       6000        550  987612345                                                                                  
+      1199 ROY                  PARK STREET          KOLKATA              12-APR-11 M       9000       1230  987612345                                                                                  
+      1211 ZIZA                 HAIMA                GUWAHATI             21-APR-11 M       6500       1350  456712345                                                                                  
+                                                                                                       1000                                                                                             
+
+11 rows selected.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off;
