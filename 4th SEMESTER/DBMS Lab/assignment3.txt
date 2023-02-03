@@ -1,0 +1,159 @@
+SQL> select * from employee1;
+
+     EMPID NAME                 ADDRESS              CITY                 DOJ       G     SALARY      BONUS      PHONE                                                                                  
+---------- -------------------- -------------------- -------------------- --------- - ---------- ---------- ----------                                                                                  
+      1111 PREENON              MANITOLA             MALDA                14-FEB-11 M       5000       3000  987612345                                                                                  
+      1122 SHRAVAN              HATIA                KOLKATA              17-FEB-11 M      11000       1000 9876543213                                                                                  
+      1133 NAYEER               DORANDA              RANCHI               21-FEB-11 M       4000       1300 9876543213                                                                                  
+      1144 PRANEESH             POWAI                MUMBAI               27-FEB-11 M      12100       3100 9876543213                                                                                  
+      1155 ANNA                 KEMPAGONDA           CHENNAI              17-MAR-11 M       1000       3500 9876543213                                                                                  
+      1166 SHASHANK             HCL                  NAGPUR               21-MAR-11 M       7000       4040 9877653213                                                                                  
+      1177 ZOITA                DEBI                 ALLAHABAD            28-MAR-11 M       3000       4500 9877653213                                                                                  
+      1188 GUJJU                BOIDA                AHEMDABAD            02-APR-11 M       6000        550  987612345                                                                                  
+      1199 ROY                  PARK STREET          KOLKATA              12-APR-11 M      14000       1230  987612345                                                                                  
+      1211 ZIZA                 HAIMA                GUWAHATI             21-APR-11 M       6500       1350  456712345                                                                                  
+                                                                                                       1000                                                                                             
+
+11 rows selected.
+
+SQL> select * from employee1 where city = 'KOLKATA';
+
+     EMPID NAME                 ADDRESS              CITY                 DOJ       G     SALARY      BONUS      PHONE                                                                                  
+---------- -------------------- -------------------- -------------------- --------- - ---------- ---------- ----------                                                                                  
+      1122 SHRAVAN              HATIA                KOLKATA              17-FEB-11 M      11000       1000 9876543213                                                                                  
+      1199 ROY                  PARK STREET          KOLKATA              12-APR-11 M      14000       1230  987612345                                                                                  
+
+SQL> select * from employee1 where name like 'A%';
+
+     EMPID NAME                 ADDRESS              CITY                 DOJ       G     SALARY      BONUS      PHONE                                                                                  
+---------- -------------------- -------------------- -------------------- --------- - ---------- ---------- ----------                                                                                  
+      1155 ANNA                 KEMPAGONDA           CHENNAI              17-MAR-11 M       1000       3500 9876543213                                                                                  
+
+SQL> select * from employee1 where name like '%A';
+
+     EMPID NAME                 ADDRESS              CITY                 DOJ       G     SALARY      BONUS      PHONE                                                                                  
+---------- -------------------- -------------------- -------------------- --------- - ---------- ---------- ----------                                                                                  
+      1155 ANNA                 KEMPAGONDA           CHENNAI              17-MAR-11 M       1000       3500 9876543213                                                                                  
+      1177 ZOITA                DEBI                 ALLAHABAD            28-MAR-11 M       3000       4500 9877653213                                                                                  
+      1211 ZIZA                 HAIMA                GUWAHATI             21-APR-11 M       6500       1350  456712345                                                                                  
+
+SQL> select * from employee1 where name like 'S%N';
+
+     EMPID NAME                 ADDRESS              CITY                 DOJ       G     SALARY      BONUS      PHONE                                                                                  
+---------- -------------------- -------------------- -------------------- --------- - ---------- ---------- ----------                                                                                  
+      1122 SHRAVAN              HATIA                KOLKATA              17-FEB-11 M      11000       1000 9876543213                                                                                  
+
+SQL> select * from employee1 where name like '_____';
+
+     EMPID NAME                 ADDRESS              CITY                 DOJ       G     SALARY      BONUS      PHONE                                                                                  
+---------- -------------------- -------------------- -------------------- --------- - ---------- ---------- ----------                                                                                  
+      1177 ZOITA                DEBI                 ALLAHABAD            28-MAR-11 M       3000       4500 9877653213                                                                                  
+      1188 GUJJU                BOIDA                AHEMDABAD            02-APR-11 M       6000        550  987612345                                                                                  
+
+SQL> select name , city , salary from employee1 ;
+
+NAME                 CITY                     SALARY                                                                                                                                                    
+-------------------- -------------------- ----------                                                                                                                                                    
+PREENON              MALDA                      5000                                                                                                                                                    
+SHRAVAN              KOLKATA                   11000                                                                                                                                                    
+NAYEER               RANCHI                     4000                                                                                                                                                    
+PRANEESH             MUMBAI                    12100                                                                                                                                                    
+ANNA                 CHENNAI                    1000                                                                                                                                                    
+SHASHANK             NAGPUR                     7000                                                                                                                                                    
+ZOITA                ALLAHABAD                  3000                                                                                                                                                    
+GUJJU                AHEMDABAD                  6000                                                                                                                                                    
+ROY                  KOLKATA                   14000                                                                                                                                                    
+ZIZA                 GUWAHATI                   6500                                                                                                                                                    
+                                                                                                                                                                                                        
+
+11 rows selected.
+
+SQL> update employee1 set salary = salary + 5000 where city = 'KOLKATA';
+
+2 rows updated.
+
+SQL> select * from employee1;
+
+     EMPID NAME                 ADDRESS              CITY                 DOJ       G     SALARY      BONUS      PHONE                                                                                  
+---------- -------------------- -------------------- -------------------- --------- - ---------- ---------- ----------                                                                                  
+      1111 PREENON              MANITOLA             MALDA                14-FEB-11 M       5000       3000  987612345                                                                                  
+      1122 SHRAVAN              HATIA                KOLKATA              17-FEB-11 M      16000       1000 9876543213                                                                                  
+      1133 NAYEER               DORANDA              RANCHI               21-FEB-11 M       4000       1300 9876543213                                                                                  
+      1144 PRANEESH             POWAI                MUMBAI               27-FEB-11 M      12100       3100 9876543213                                                                                  
+      1155 ANNA                 KEMPAGONDA           CHENNAI              17-MAR-11 M       1000       3500 9876543213                                                                                  
+      1166 SHASHANK             HCL                  NAGPUR               21-MAR-11 M       7000       4040 9877653213                                                                                  
+      1177 ZOITA                DEBI                 ALLAHABAD            28-MAR-11 M       3000       4500 9877653213                                                                                  
+      1188 GUJJU                BOIDA                AHEMDABAD            02-APR-11 M       6000        550  987612345                                                                                  
+      1199 ROY                  PARK STREET          KOLKATA              12-APR-11 M      19000       1230  987612345                                                                                  
+      1211 ZIZA                 HAIMA                GUWAHATI             21-APR-11 M       6500       1350  456712345                                                                                  
+                                                                                                       1000                                                                                             
+
+11 rows selected.
+
+SQL> update employee1 set salary = salary+0.1 * salary where city ='MUMBAI';
+
+1 row updated.
+
+SQL> select * from employee1;
+
+     EMPID NAME                 ADDRESS              CITY                 DOJ       G     SALARY      BONUS      PHONE                                                                                  
+---------- -------------------- -------------------- -------------------- --------- - ---------- ---------- ----------                                                                                  
+      1111 PREENON              MANITOLA             MALDA                14-FEB-11 M       5000       3000  987612345                                                                                  
+      1122 SHRAVAN              HATIA                KOLKATA              17-FEB-11 M      16000       1000 9876543213                                                                                  
+      1133 NAYEER               DORANDA              RANCHI               21-FEB-11 M       4000       1300 9876543213                                                                                  
+      1144 PRANEESH             POWAI                MUMBAI               27-FEB-11 M      13310       3100 9876543213                                                                                  
+      1155 ANNA                 KEMPAGONDA           CHENNAI              17-MAR-11 M       1000       3500 9876543213                                                                                  
+      1166 SHASHANK             HCL                  NAGPUR               21-MAR-11 M       7000       4040 9877653213                                                                                  
+      1177 ZOITA                DEBI                 ALLAHABAD            28-MAR-11 M       3000       4500 9877653213                                                                                  
+      1188 GUJJU                BOIDA                AHEMDABAD            02-APR-11 M       6000        550  987612345                                                                                  
+      1199 ROY                  PARK STREET          KOLKATA              12-APR-11 M      19000       1230  987612345                                                                                  
+      1211 ZIZA                 HAIMA                GUWAHATI             21-APR-11 M       6500       1350  456712345                                                                                  
+                                                                                                       1000                                                                                             
+
+11 rows selected.
+
+SQL> select * from employee1 where name like 'P%' and salary > 10000;
+
+     EMPID NAME                 ADDRESS              CITY                 DOJ       G     SALARY      BONUS      PHONE                                                                                  
+---------- -------------------- -------------------- -------------------- --------- - ---------- ---------- ----------                                                                                  
+      1144 PRANEESH             POWAI                MUMBAI               27-FEB-11 M      13310       3100 9876543213                                                                                  
+
+SQL> select * from employee1 where GENDER='M' and salary < 5000;
+
+     EMPID NAME                 ADDRESS              CITY                 DOJ       G     SALARY      BONUS      PHONE                                                                                  
+---------- -------------------- -------------------- -------------------- --------- - ---------- ---------- ----------                                                                                  
+      1133 NAYEER               DORANDA              RANCHI               21-FEB-11 M       4000       1300 9876543213                                                                                  
+      1155 ANNA                 KEMPAGONDA           CHENNAI              17-MAR-11 M       1000       3500 9876543213                                                                                  
+      1177 ZOITA                DEBI                 ALLAHABAD            28-MAR-11 M       3000       4500 9877653213                                                                                  
+
+SQL> select * from employee1 where CITY NOT IN 'KOLKATA';
+
+     EMPID NAME                 ADDRESS              CITY                 DOJ       G     SALARY      BONUS      PHONE                                                                                  
+---------- -------------------- -------------------- -------------------- --------- - ---------- ---------- ----------                                                                                  
+      1111 PREENON              MANITOLA             MALDA                14-FEB-11 M       5000       3000  987612345                                                                                  
+      1133 NAYEER               DORANDA              RANCHI               21-FEB-11 M       4000       1300 9876543213                                                                                  
+      1144 PRANEESH             POWAI                MUMBAI               27-FEB-11 M      13310       3100 9876543213                                                                                  
+      1155 ANNA                 KEMPAGONDA           CHENNAI              17-MAR-11 M       1000       3500 9876543213                                                                                  
+      1166 SHASHANK             HCL                  NAGPUR               21-MAR-11 M       7000       4040 9877653213                                                                                  
+      1177 ZOITA                DEBI                 ALLAHABAD            28-MAR-11 M       3000       4500 9877653213                                                                                  
+      1188 GUJJU                BOIDA                AHEMDABAD            02-APR-11 M       6000        550  987612345                                                                                  
+      1211 ZIZA                 HAIMA                GUWAHATI             21-APR-11 M       6500       1350  456712345                                                                                  
+
+8 rows selected.
+
+SQL> select * from employee1 where name like '_____' and CITY = 'ALLAHABAD';
+
+     EMPID NAME                 ADDRESS              CITY                 DOJ       G     SALARY      BONUS      PHONE                                                                                  
+---------- -------------------- -------------------- -------------------- --------- - ---------- ---------- ----------                                                                                  
+      1177 ZOITA                DEBI                 ALLAHABAD            28-MAR-11 M       3000       4500 9877653213                                                                                  
+
+
+SQL> select NAME , ADDRESS FROM employee1 where salary between 6000 and 10000;
+
+NAME                 ADDRESS                                                                                                                                                                            
+-------------------- --------------------                                                                                                                                                               
+SHASHANK             HCL                                                                                                                                                                                
+GUJJU                BOIDA                                                                                                                                                                              
+ZIZA                 HAIMA                                                                                                                                                                              
+
+SQL> spool off;
