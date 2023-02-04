@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+</head>
+<body>
+    <form>
+        Name:-
+        <input type="text" name="name" id="name" size="30" maxlength="10">
+        <br><br><br><br><br><br><br><br><br><br><br>
+        User Id:-
+        <input type="text" name="name" id="name" size="30" maxlength="8"><br><br>
+        Password:-
+        <input type="password" name="pwd" id="pwd" maxlength="15"> 
+        <br><br><br><br>
+        State Of Origin:- 
+        <select name="state" id="state" size=1>
+            <option>    </option>
+            <option>Andhra Pradesh</option>
+            <option>Jharkhand</option>
+            <option>Maharastra</option>
+            <option>Odisha</option>
+        </select><br><br>
+        <fieldset>
+            <legend align="top">Gender</legend>
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="male" >MALE</label>
+            <input type="radio" name="gender" id="female" value="female">
+            <label for="female" >FEMALE</label>
+        </fieldset>
+        <br><br><br>
+        <fieldset>
+            <legend align="top">OTT Platform:-</legend>
+            <input type="checkbox" name="nf" id="nf" value="yes">
+            <label for="nf">NEFLIX</label><br>
+            <input type="checkbox" name="ap" id="ap" value="yes" checked="checked">
+            <label for="ap">AMAZON PRIME</label><br>         
+            <input type="checkbox" name="dh" id="dh" value="yes">
+            <label for="dh">DISNEY HOTSTAR</label>
+        </fieldset>
+<br><br>
+            <label for="cmt">Comments</label><br>
+            <textarea name="cmt" id="cmt" rows="5" cols="25">
+Enter comments here...
+            </textarea><br>
+            <input type="file" name="file_name">
+            
+        </filedset>
+        
+    </form>
+</body>
+</html>
